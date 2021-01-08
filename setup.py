@@ -3,7 +3,7 @@
 
 from setuptools import setup, find_packages
 
-from regexes import __version__
+from democritus_regexes import __version__
 
 with open('README.md') as readme_file:
     readme = readme_file.read()
