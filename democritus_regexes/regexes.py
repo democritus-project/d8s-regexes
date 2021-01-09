@@ -6,7 +6,7 @@ import sys
 from typing import List, Iterable
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
-from .temp_utils import map_first_arg, deduplicate, longest
+from .regexes_temp_utils import map_first_arg, deduplicate, longest
 
 
 def is_regex(possible_regex: str) -> bool:
