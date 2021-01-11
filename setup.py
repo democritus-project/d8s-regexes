@@ -30,7 +30,7 @@ setup(
     install_requires=requirements,
     license="MIT license",
     zip_safe=True,
-    keywords='regexes',
+    keywords='regexes,regex,regular expression,democritus,regex utility,regex utils,re utils',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
