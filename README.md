@@ -4,7 +4,9 @@
 [![Build Status](https://travis-ci.com/democritus-project/democritus-regexes.svg?branch=master)](https://travis-ci.com/democritus-project/democritus-regexes)
 [![codecov](https://codecov.io/gh/democritus-project/democritus-regexes/branch/main/graph/badge.svg?token=61M1BLDZKU)](https://codecov.io/gh/democritus-project/democritus-regexes)
 
-Democritus functions for working with regexes in Python.
+Democritus functions<sup>[1]</sup> for working with and using regexes.
+
+[1] Democritus functions are <i>simple, effective, modular, well-tested, and well-documented</i> functions.
 
 ## Usage
 
