@@ -123,19 +123,3 @@ def regex_create(inputs: List[str], *, simplify_regex: bool = True, consolidatio
     else:
         return regex
 
-
-def replace(regex_pattern: str, replacement: str, input_string: str, *, ignore_case: bool = True, **kwargs):
-    """."""
-    if ignore_case:
-        if 'flags' not in kwargs:
-            kwargs['flags'] = re.IGNORECASE
-        else:
-            kwargs['flags'] = kwargs["flags"] | re.IGNORECASE
-        return re.sub(regex_pattern, replacement, input_string, **kwargs)
-    else:
-        return re.sub(regex_pattern, replacement, input_string, **kwargs)
-
-
-def find(regex_pattern, input_string, *args) -> Iterable[str]:
-    """Find the given regex pattern in the given input_string."""
-    return re.findall(regex_pattern, input_string, *args)
