@@ -1,9 +1,6 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
 from setuptools import setup, find_packages
-
-from democritus_regexes import __version__
 
 with open('README.md') as readme_file:
     readme = readme_file.read()
@@ -16,7 +13,6 @@ with open('requirements_dev.txt') as requirements_dev_file:
 
 setup(
     name='democritus_regexes',
-    version=__version__,
     description="Democritus functions for working with regexes in Python.",
     long_description=readme,
     long_description_content_type="text/markdown",
