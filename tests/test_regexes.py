@@ -1,6 +1,6 @@
 import re
 
-from democritus_regexes import regex_closest_match, regex_create, regex_simplify, regex_escape, is_regex, replace, find
+from democritus_regexes import regex_closest_match, regex_create, regex_simplify, regex_escape, is_regex
 
 
 def test_is_regex_1():
@@ -93,24 +93,3 @@ def test_regex_simplify_1():
 
     s = '[ab]c[ab]'
     assert regex_simplify(s) == '[ab]c[ab]'
-
-
-def test_replace_docs_1():
-    assert replace('a test', 'an exam', 'this is just a test') == 'this is just an exam'
-    assert replace('A TEST', 'an exam', 'this is just a test') == 'this is just an exam'
-    assert replace('.est', 'jest', 'this is just a test') == 'this is just a jest'
-    assert replace('.EST', 'jest', 'this is just a test') == 'this is just a jest'
-    assert replace('.EST', 'jest', 'this is just a test', ignore_case=False) == 'this is just a test'
-
-    # make sure that regex flags the processed correctly
-    s = '''F
-OOBAR'''
-    assert replace('.oo', 'AAA', s, flags=re.DOTALL) == 'FAAABAR'
-    assert (
-        replace('.EST', 'jest', 'this is just a test', ignore_case=False, flags=re.IGNORECASE) == 'this is just a jest'
-    )
-    assert replace('.EST', 'jest', 'this is just a test', flags=re.IGNORECASE) == 'this is just a jest'
-
-
-def test_find_1():
-    assert list(find('\S*ing', 'testing a long running string')) == ['testing', 'running', 'string']
