@@ -6,7 +6,7 @@
 
 Democritus functions<sup>[1]</sup> for working with and using regexes.
 
-[1] Democritus functions are <i>simple, effective, modular, well-tested, and well-documented</i> functions.
+[1] Democritus functions are <i>simple, effective, modular, well-tested, and well-documented</i> Python functions.
 
 ## Usage
 

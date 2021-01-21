@@ -1,11 +1,6 @@
-# -*- coding: utf-8 -*-
-
-import os
 import re
-import sys
 from typing import List, Iterable
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 from .regexes_temp_utils import map_first_arg, deduplicate, longest
 
 
@@ -122,4 +117,3 @@ def regex_create(inputs: List[str], *, simplify_regex: bool = True, consolidatio
         return regex_simplify(regex, consolidation_threshold=consolidation_threshold)
     else:
         return regex
-
