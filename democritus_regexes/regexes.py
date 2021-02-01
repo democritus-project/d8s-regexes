@@ -1,7 +1,9 @@
 import re
 from typing import List, Iterable
 
-from .regexes_temp_utils import map_first_arg, deduplicate, longest
+from democritus_utility import map_first_arg
+
+from .regexes_temp_utils import deduplicate, longest
 
 
 def is_regex(possible_regex: str) -> bool:
