@@ -38,12 +38,6 @@ def regex_closest_match(regex: str, string: str) -> str:
 
 
 @map_first_arg
-def regex_escape(string: str) -> str:
-    """Escape the given string for use as a regex."""
-    return re.escape(string)
-
-
-@map_first_arg
 def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
     """Clean and simplify a regex to a more efficient form."""
     # TODO: simplify this function... there is a lot going on here and I would like to break it up

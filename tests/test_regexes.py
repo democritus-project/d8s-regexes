@@ -1,19 +1,11 @@
 import re
 
-from democritus_regexes import regex_closest_match, regex_create, regex_simplify, regex_escape, is_regex
+from democritus_regexes import regex_closest_match, regex_create, regex_simplify, is_regex
 
 
 def test_is_regex_1():
     assert is_regex('foo bar')
     assert not is_regex('(')
-
-
-def test_regex_escape_1():
-    result = regex_escape('Foo bar.')
-    assert result == 'Foo\\ bar\\.'
-
-    result = regex_escape(['a.', 'b.'])
-    assert result == ['a\\.', 'b\\.']
 
 
 def test_regex_closest_match_1():
