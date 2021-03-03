@@ -1,6 +1,4 @@
-import re
-
-from democritus_regexes import regex_closest_match, regex_create, regex_simplify, is_regex
+from democritus_regexes import is_regex, regex_closest_match, regex_create, regex_simplify
 
 
 def test_is_regex_1():

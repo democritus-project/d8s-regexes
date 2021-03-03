@@ -1,7 +1,5 @@
 import re
-from typing import List, Iterable
-
-from democritus_utility import map_first_arg
+from typing import List
 
 from .regexes_temp_utils import deduplicate, longest
 
@@ -23,7 +21,9 @@ def regex_closest_match(regex: str, string: str) -> str:
     modified_regex = regex
 
     while no_match:
-        # TODO: there may be a better way to do this rather than a try-except (perhaps using sre_parse to strategically remove sections of the regex and/or test if the regex is valid before trying to match on it)
+        # there may be a better way to do this rather than a try-except...
+        # (perhaps using sre_parse to strategically remove sections of the regex and/or...
+        #  test if the regex is valid before trying to match on it)
         try:
             match = re.match(modified_regex, string)
         except re.error:
@@ -37,10 +37,8 @@ def regex_closest_match(regex: str, string: str) -> str:
         return modified_regex
 
 
-@map_first_arg
 def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
     """Clean and simplify a regex to a more efficient form."""
-    # TODO: simplify this function... there is a lot going on here and I would like to break it up
     from itertools import islice
 
     regex_section_pattern = r'(?<!\\)\[[\w\- ]+\]'

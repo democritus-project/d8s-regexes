@@ -1,9 +1,9 @@
 """Utility functions temporarily provided until the rest of the democritus functions get uploaded."""
 
-from typing import Iterable, Any, List
+from typing import Any, Iterable, List
 
 
-def sort_by_length(list_arg: List[Any], **kwargs) -> List[Any]:
+def sort_by_length(list_arg: Iterable[Any], **kwargs) -> List[Any]:
     """."""
     sorted_list = sorted(list_arg, key=lambda x: len(x), **kwargs)
     return sorted_list
