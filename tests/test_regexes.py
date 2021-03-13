@@ -1,4 +1,4 @@
-from democritus_regexes import is_regex, regex_closest_match, regex_create, regex_simplify
+from d8s_regexes import is_regex, regex_closest_match, regex_create, regex_simplify
 
 
 def test_is_regex_1():
