@@ -1,8 +1,8 @@
 # Democritus Regexes
 
-[![PyPI](https://img.shields.io/pypi/v/democritus-regexes.svg)](https://pypi.python.org/pypi/democritus-regexes)
-[![Build Status](https://travis-ci.com/democritus-project/democritus-regexes.svg?branch=main)](https://travis-ci.com/democritus-project/democritus-regexes)
-[![codecov](https://codecov.io/gh/democritus-project/democritus-regexes/branch/main/graph/badge.svg?token=61M1BLDZKU)](https://codecov.io/gh/democritus-project/democritus-regexes)
+[![PyPI](https://img.shields.io/pypi/v/d8s-regexes.svg)](https://pypi.python.org/pypi/d8s-regexes)
+[![Build Status](https://travis-ci.com/democritus-project/d8s-regexes.svg?branch=main)](https://travis-ci.com/democritus-project/d8s-regexes)
+[![codecov](https://codecov.io/gh/democritus-project/d8s-regexes/branch/main/graph/badge.svg?token=61M1BLDZKU)](https://codecov.io/gh/democritus-project/d8s-regexes)
 
 Democritus functions<sup>[1]</sup> for working with and using regexes.
 
