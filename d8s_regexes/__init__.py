@@ -6,10 +6,10 @@ except ImportError:
 from .regexes import *
 
 try:
-    __version__ = version('democritus_regexes')
+    __version__ = version('d8s_regexes')
 except PackageNotFoundError:
     message = (
-        'Unable to find a version number for "democritus_regexes". '
+        'Unable to find a version number for "d8s_regexes". '
         + 'This likely means the library was not installed properly. '
         + 'Please re-install it and, if the problem persists, '
         + 'raise an issue here: https://github.com/democritus-project/democritus-regexes/issues.'
