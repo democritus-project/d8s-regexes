@@ -7,19 +7,24 @@ def test_is_regex_1():
 
 
 def test_regex_closest_match_1():
-    p = 'foo[a-z]'
+    regex = 'foo[a-z]'
     s = 'foo bar'
-    result = regex_closest_match(p, s)
+    result = regex_closest_match(regex, s)
     assert result == 'foo'
 
-    p = 'when in the  course'
+    regex = 'when in the  course'
     s = 'when in the course'
-    result = regex_closest_match(p, s)
+    result = regex_closest_match(regex, s)
     assert result == 'when in the '
 
-    p = 'ab'
+    regex = 'ab'
     s = 'z'
-    result = regex_closest_match(p, s)
+    result = regex_closest_match(regex, s)
+    assert result == ''
+
+    regex = '[ab]'
+    s = 'z'
+    result = regex_closest_match(regex, s)
     assert result == ''
 
 

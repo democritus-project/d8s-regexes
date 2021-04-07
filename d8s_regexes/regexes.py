@@ -17,24 +17,14 @@ def is_regex(possible_regex: str) -> bool:
 # TODO: I'd like to rename this function
 def regex_closest_match(regex: str, string: str) -> str:
     """Find the longest version of regex that matches something in string."""
-    no_match = True
-    modified_regex = regex
-
-    while no_match:
-        # there may be a better way to do this rather than a try-except...
-        # (perhaps using sre_parse to strategically remove sections of the regex and/or...
-        #  test if the regex is valid before trying to match on it)
-        try:
-            match = re.match(modified_regex, string)
-        except re.error:
-            modified_regex = modified_regex[:-1]
-        else:
-            if match is not None:
-                no_match = False
-            else:
-                modified_regex = modified_regex[:-1]
+    try:
+        match = re.match(regex, string)
+    except re.error:
+        regex = regex_closest_match(regex[:-1], string)
     else:
-        return modified_regex
+        if match is None:
+            regex = regex_closest_match(regex[:-1], string)
+    return regex
 
 
 def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
@@ -47,7 +37,6 @@ def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
     # collapse regexes into generalized sections
     for section in regex_sections:
         section_content = section.strip('[').strip(']')
-        # todo: make this smarter - be able to consolidate characters of a certain type (e.g. lowercase, uppercase, numbers)
         if len(section_content) > consolidation_threshold:
             new_section = '[a-zA-Z0-9]'
             regex = regex.replace(section, new_section, 1)
@@ -61,7 +50,7 @@ def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
     for index, section in sections:
         repetition_count = 1
         repeated_section = section
-        for s in regex_sections[index + 1 :]:
+        for s in regex_sections[index + 1 :]:  # noqa: E203
             # if this section equals the current section...
             if s == section:
                 repetition_count += 1
