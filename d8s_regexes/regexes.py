@@ -1,7 +1,7 @@
 import re
 from typing import List
 
-from .regexes_temp_utils import deduplicate, longest
+from d8s_lists import deduplicate, longest
 
 
 def is_regex(possible_regex: str) -> bool:
