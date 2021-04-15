@@ -14,9 +14,24 @@ Democritus functions<sup>[1]</sup> for working with and using regexes.
 
 We use `d8s` as an abbreviation for `democritus` (you can read more about this [here](https://github.com/democritus-project/roadmap#what-is-d8s)).
 
-## Usage
+## Functions
 
-Coming soon...
+  - ```python
+    def is_regex(possible_regex: str) -> bool:
+        """Determine whether or not the possible_regex is a valid regex."""
+    ```
+  - ```python
+    def regex_closest_match(regex: str, string: str) -> str:
+        """Find the longest version of regex that matches something in string."""
+    ```
+  - ```python
+    def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
+        """Clean and simplify a regex to a more efficient form."""
+    ```
+  - ```python
+    def regex_create(inputs: List[str], *, simplify_regex: bool = True, consolidation_threshold: int = 5) -> str:
+        """Create a regex that matches all of the inputs."""
+    ```
 
 ## Development
 
