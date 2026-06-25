@@ -1,2 +1,0 @@
-importlib-metadata; python_version < '3.8'
-d8s-lists

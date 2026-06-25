@@ -31,18 +31,18 @@ def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
     """Clean and simplify a regex to a more efficient form."""
     from itertools import islice
 
-    regex_section_pattern = r'(?<!\\)\[[\w\- ]+\]'
+    regex_section_pattern = r"(?<!\\)\[[\w\- ]+\]"
     regex_sections = re.findall(regex_section_pattern, regex)
 
     # collapse regexes into generalized sections
     for section in regex_sections:
-        section_content = section.strip('[').strip(']')
+        section_content = section.strip("[").strip("]")
         if len(section_content) > consolidation_threshold:
-            new_section = '[a-zA-Z0-9]'
+            new_section = "[a-zA-Z0-9]"
             regex = regex.replace(section, new_section, 1)
 
     # find the regex sections again because some sections may have been collapsed in the previous code
-    regex_section_pattern = r'(?<!\\)\[[\w\- ]+\]'
+    regex_section_pattern = r"(?<!\\)\[[\w\- ]+\]"
     regex_sections = re.findall(regex_section_pattern, regex)
 
     # merge repeated sections
@@ -60,7 +60,7 @@ def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
                 break
 
         if repetition_count != 1:
-            new_section = section + '{' + str(repetition_count) + '}'
+            new_section = section + "{" + str(repetition_count) + "}"
             regex = regex.replace(repeated_section, new_section, 1)
             next(islice(sections, index, repetition_count), None)
 
@@ -69,7 +69,7 @@ def regex_simplify(regex: str, *, consolidation_threshold: int = 5) -> str:
 
 def regex_create(inputs: List[str], *, simplify_regex: bool = True, consolidation_threshold: int = 5) -> str:
     """Create a regex that matches all of the inputs."""
-    regex = ''
+    regex = ""
     longest_input = longest(inputs)
 
     for index, char in enumerate(longest_input):
@@ -88,13 +88,13 @@ def regex_create(inputs: List[str], *, simplify_regex: bool = True, consolidatio
                 break
 
         if not chars_match:
-            new_regex_section = ''.join(sorted(deduplicate(chars_at_index)))
-            regex += '[{}]'.format(new_regex_section)
+            new_regex_section = "".join(sorted(deduplicate(chars_at_index)))
+            regex += "[{}]".format(new_regex_section)
         else:
             regex += char
 
         if value_is_optional:
-            regex += '?'
+            regex += "?"
 
     if simplify_regex:
         return regex_simplify(regex, consolidation_threshold=consolidation_threshold)
